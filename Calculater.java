@@ -29,8 +29,8 @@ public class Calculater{
         txt.setBackground(Color.pink);        
         JPanel panel=new JPanel();
         panel.setBounds(0,120,500,320);    
-        panel.setBackground(Color.gray);  
-        GridLayout layout = new GridLayout(4,4);       
+        //panel.setBackground(Color.gray);  
+        GridLayout layout = new GridLayout(5,4);       
         panel.setLayout(layout);
         reset_data=new JButton("Reset");
     
@@ -57,7 +57,7 @@ public class Calculater{
                 && !data.equals("/") && !data.equals("="))
                 {
                         temp_str=temp_str+data;  
-                       // System.out.println(temp_str);
+                      // System.out.println(temp_str);
                               
                 }                
                 else
@@ -183,7 +183,7 @@ public class Calculater{
                 int counta=0;
                 for(String aa:data_in)
                 {
-                    //System.out.println(ad);
+                    
                     if(aa.equals("="))
                     {
                         ln_count=counta;
@@ -221,7 +221,7 @@ public class Calculater{
                         }
                         if(data_in[1].equals("="))
                         {
-                           //System.out.println("Final value:"+sub_data[0]);
+                           
                            String result_data=data_in[0];                          
                            txt.setText(outstring+result_data);
                           
@@ -241,8 +241,11 @@ public class Calculater{
           ActionListener click_rst=new ActionListener(){
             public void actionPerformed(ActionEvent e)
             { 
-                          
-                txt.setText("");     
+                data="";  
+                indata=""; 
+                outstring="";
+                txt.setText("");   
+                temp_str="";
                 count=0;         
                
                
